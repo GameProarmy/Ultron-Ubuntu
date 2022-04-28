@@ -191,7 +191,7 @@ module.exports = grupo = async(client,message) => {
                 var grupoInfo = await db.obterGrupo(groupId)
                 var estadoNovo = !grupoInfo.antifake.status
                 if (estadoNovo) {
-                    var DDIAutorizados = (body.slice(7).length == 0) ? ["55"] : body.slice(7).split(" ")
+                    var DDIAutorizados = (body.slice(7).length == 0) ? ["49"] : body.slice(7).split(" ")
                     await db.alterarAntiFake(groupId, true, DDIAutorizados)
                     client.reply(from,  msgs_texto.grupo.antifake.ligado, id)
                 } else {
